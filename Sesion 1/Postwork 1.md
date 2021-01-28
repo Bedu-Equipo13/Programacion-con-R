@@ -1,7 +1,6 @@
 postwork\_1
 ================
 Equipo-13
-27/1/2021
 
 ## Desarrollo
 
