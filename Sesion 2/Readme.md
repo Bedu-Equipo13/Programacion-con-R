@@ -155,7 +155,7 @@ lapply(lista, str)
     ## NULL
 
 ``` r
-#Finalmente, con ayuda de las funciones rbind y do.call combinamos los data frames contenidos en nlista como un Ãºnico data frame
+#Finalmente, con ayuda de las funciones rbind y do.call combinamos los data frames contenidos en nlista como un unico data frame
 data <- do.call(rbind, lista)
 
 dim(data)
