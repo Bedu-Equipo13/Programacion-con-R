@@ -160,7 +160,7 @@ plot <- ggplot(pgol_casa, aes(x = Goles, y = Probabilidad)) +
 plot
 ```
 
-![](postwork3_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+![plot1](plot1.png)<!-- -->
 
 ``` r
 #dev.off()
@@ -202,7 +202,7 @@ plot <- ggplot(pgol_vis, aes(x = Goles, y = Probabilidad)) +
 plot
 ```
 
-![](postwork3_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+![plot2](plot2.png)<!-- -->
 
 ``` r
 #dev.off()
@@ -251,7 +251,7 @@ plot<-ggplot(pc_gol, aes(goles_casa, goles_visita)) +
 plot
 ```
 
-![](postwork3_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
+![plot3](plot3.png)<!-- -->
 
 ``` r
 #dev.off()
