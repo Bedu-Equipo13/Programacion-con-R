@@ -58,8 +58,9 @@ df <- ts(df[,3], start = 2010, end = 2019 ,frequency= 10)
 class(df)
 ´´´
 4. Grafica la serie de tiempo.
+´´´r
 library(ggplot2)
 plot(df, main = 'Promedio de Goles Anotados por Mes', xlab = 'Tiempo', ylab= 'Promedio', sub= 'Agosto 2010 - Diciembre 2019')
-
+´´´
 
 
