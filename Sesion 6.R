@@ -1,0 +1,59 @@
+#Importe el conjunto de datos match.data.csv a R y realice lo siguiente:
+#Agrega una nueva columna sumagoles que contenga la suma de goles por partido.
+#Obtén el promedio por mes de la suma de goles.
+#Crea la serie de tiempo del promedio por mes de la suma de goles hasta diciembre de 2019.
+#Grafica la serie de tiempo.
+
+#Importamos el conjunto de datos de match.data.csv
+#no podia descarga el csv, por eso uso directaemente el link de github
+url <- 'https://raw.githubusercontent.com/beduExpert/Programacion-con-R-Santander/master/Sesion-06/Postwork/match.data.csv'
+matchdata <- read.table(url, header = TRUE, sep = ',')
+View(matchdata)
+str(matchdata)
+
+attach(matchdata)
+
+#agregar una nueva columna sumagoles que contena la suma de goles por partido
+matchdata['sumagoles'] <- matchdata[,3] + matchdata[,5]
+
+#obtener el promedio por mes de la suma de los goles
+library(dplyr)
+install.packages('lubridate')
+library(lubridate)
+matchdata$date<- as.Date(matchdata$date)
+
+matchdata['Mes'] <-months(matchdata$date)
+matchdata['Año'] <-year(matchdata$date)
+
+
+agrupado1 <- matchdata %>% group_by(Año,Mes)
+agru <- agrupado1 %>% summarise(promedio.goles = mean(sumagoles))
+str(agru)
+
+install.packages('zoo')
+library(zoo)
+
+df <- data.frame('Año' = agru$Año, 'Mes'=agru$Mes, 'Promedio de goles' = agru$promedio.goles)
+str(df)
+
+df$my <- as.yearmon(paste(df$Mes, df$Año))
+df <- df[order(df$my),]
+
+n <-dim(df)[1]-5
+n
+
+df <-df[1:n,]
+
+dim(df)
+
+#Crea la serie de tiempo del promedio por mes de la suma de goles hasta diciembre de 2019.
+class(df)
+df <- ts(df[,3], start = 2010, end = 2019 ,frequency= 10)
+
+class(df)
+
+library(ggplot2)
+
+plot(df, main = 'Promedio de Goles Anotados por Mes', xlab = 'Tiempo', ylab= 'Promedio', sub= 'Agosto 2010 - Diciembre 2019')
+
+
