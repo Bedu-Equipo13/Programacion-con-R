@@ -4,7 +4,7 @@ Curso de Programacion con R impartido por BEDU y como parte de la Beca Santander
 
 - Jesus Antonio Hernandez Aguilera: antoniohdz_21@hotmail.com
 - Angel Uriel Meléndez Rivera: amelendezr1100@alumno.ipn.mx
-- Adalberto Benitez
+- Adalberto Benitez Zapata: adalb518@gmail.com
 - Sergio Maldonado Rodriguez: sermalrod@outlook.com
 
 
