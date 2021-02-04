@@ -8,7 +8,7 @@ Equipo 13
 
  <!-- end list -->
 
-´´´ r
+``` r
 #Importamos el conjunto de datos de match.data.csv
 #no podia descarga el csv, por eso uso directaemente el link de github
 url <- 'https://raw.githubusercontent.com/beduExpert/Programacion-con-R-Santander/master/Sesion-06/Postwork/match.data.csv'
@@ -20,10 +20,10 @@ attach(matchdata)
 
 #agregar una nueva columna sumagoles que contena la suma de goles por partido
 matchdata['sumagoles'] <- matchdata[,3] + matchdata[,5]
-´´´
+```
 2. Obtén el promedio por mes de la suma de goles.
 
-´´´r
+```r
 #obtener el promedio por mes de la suma de los goles
 library(dplyr)
 install.packages('lubridate') #paquete para usar años.
@@ -49,18 +49,18 @@ df <- df[order(df$my),] #sorteamos correctamente
 n <-dim(df)[1]-5
 df <-df[1:n,] 
 
-´´´
+```
 3. Crea la serie de tiempo del promedio por mes de la suma de goles hasta diciembre de 2019
-´´´r
+```r
 class(df)
 df <- ts(df[,3], start = 2010, end = 2019 ,frequency= 10)
 
 class(df)
-´´´
+```
 4. Grafica la serie de tiempo.
-´´´r
+```r
 library(ggplot2)
 plot(df, main = 'Promedio de Goles Anotados por Mes', xlab = 'Tiempo', ylab= 'Promedio', sub= 'Agosto 2010 - Diciembre 2019')
-´´´
+```
 
 
