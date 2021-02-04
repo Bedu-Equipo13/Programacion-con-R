@@ -52,15 +52,15 @@ SmallData <- select(data, date = Date, home.team = HomeTeam,
 write.csv(SmallData,"soccer.csv",row.names = FALSE)
 ```
 Datos que se almacenaron (primeras 5 filas).
-
-##  date  home.team home.score  away.team away.score
-1 0017-08-18    Leganes          1     Alaves          0
-2 0017-08-18   Valencia          1 Las Palmas          0
-3 0017-08-19      Celta          2   Sociedad          3
-4 0017-08-19     Girona          2 Ath Madrid          2
-5 0017-08-19    Sevilla          1    Espanol          1
-6 0017-08-20 Ath Bilbao          0     Getafe          0
 ##
+##  date  home.team home.score  away.team away.score
+##1 0017-08-18    Leganes          1     Alaves          0
+##2 0017-08-18   Valencia          1 Las Palmas          0
+##3 0017-08-19      Celta          2   Sociedad          3
+##4 0017-08-19     Girona          2 Ath Madrid          2
+##5 0017-08-19    Sevilla          1    Espanol          1
+##6 0017-08-20 Ath Bilbao          0     Getafe          0
+
 
 2. Con la función create.fbRanks.dataframes del paquete fbRanks importe el archivo soccer.csv a R y al mismo tiempo asignelo a una variable llamada listasoccer. Se creará una lista con los elementos scores y teams que son data frames listos para la función rank.teams. Asigna estos data frames a variables llamadas anotaciones y equipos.
 
