@@ -147,8 +147,8 @@ head(teams, n = 2L); dim(teams); head(scores, n = 2L); dim(scores)
 #```R
 f <- scores$date # Fechas de partidos
 fu <- unique(f) # Fechas sin repeticionn
-Ym <- format(fu, "%Y-%m") # Meses y a�oss
-Ym <- unique(Ym) # Meses y años sin repetir
+Ym <- format(fu, "%Y-%m") # Meses y añoss
+Ym <- unique(Ym) # Meses y aÃ±os sin repetir
 places <- which(Ym[15]==format(scores$date, "%Y-%m")) # Consideramos partidos de 15 meses para comenzar a ajustar el modelo
 ffe <- scores$date[max(places)] # Fecha final conjunto de entrenamiento
 #```
@@ -237,10 +237,10 @@ as <- momio$away.score
 
 
 #```R
-mean(phs + pas > 3) # proporción de partidos con más de tres goles segunn el modelo
+mean(phs + pas > 3) # proporciÃ³n de partidos con mÃ¡s de tres goles segunn el modelo
 mean(phs + pas > 3 & hs + as > 2.5)/mean(phs + pas > 3) 
 # probabilidad condicional estimada de ganar en over 2.5
-mean(phs + pas < 2.1) # proporción de partidos con menos de 2.1 goles segunn el modelo
+mean(phs + pas < 2.1) # proporciÃ³n de partidos con menos de 2.1 goles segunn el modelo
 mean(phs + pas < 2.1 & hs + as < 2.5)/mean(phs + pas < 2.1) 
 # probabilidad condicional estimada de ganar en under 2.5
 #```
@@ -278,8 +278,8 @@ p <- ggplot(g, aes(x=Num_Ap, y=Capital)) + geom_line( color="purple") + geom_poi
        title = "Realizando una secuencia de apuestas") +
   theme(plot.title = element_text(size=12))  +
   theme(axis.text.x = element_text(face = "bold", color="blue" , size = 10, angle = 25, hjust = 1),
-        axis.text.y = element_text(face = "bold", color="blue" , size = 10, angle = 25, hjust = 1))  # color, ángulo y estilo de las abcisas y ordenadas 
-p
+        axis.text.y = element_text(face = "bold", color="blue" , size = 10, angle = 25, hjust = 1))  # color, Ã¡ngulo y estilo de las abcisas y ordenadas 
+print(p)
 dev.off()
 #```
 
@@ -314,7 +314,7 @@ p <- ggplot(g, aes(x=Num_Ap, y=Capital)) + geom_line( color="purple") + geom_poi
   theme(plot.title = element_text(size=12))  +
   theme(axis.text.x = element_text(face = "bold", color="blue" , size = 10, angle = 25, hjust = 1),
         axis.text.y = element_text(face = "bold", color="blue" , size = 10, angle = 25, hjust = 1))  # color, angulo y estilo de las abcisas y ordenadas 
-p
+print(p)
 dev.off()
 #```
 
@@ -336,7 +336,7 @@ pgol_vis<-(table(FTAG)/length(FTAG))*100
 #La probabilidad (conjunta) de que el equipo que juega en casa anote x goles y el equipo que juega como visitante anote y goles (x=0,1,2,, y=0,1,2,)
 pc_gol<-round((table(FTHG,FTAG)/dim(data)[1])*100,3)
 
-# gr�fico de barras para las probabilidades marginales estimadas del n�mero de goles que anota el equipo de casa
+# gráfico de barras para las probabilidades marginales estimadas del número de goles que anota el equipo de casa
 pgol_casa <- as.data.frame(pgol_casa)
 pgol_casa <- pgol_casa %>% rename(Goles = FTHG, Probabilidad = Freq)
 
@@ -346,10 +346,10 @@ plot <- ggplot(pgol_casa, aes(x = Goles, y = Probabilidad)) +
   geom_col (fill=color_range(9)) + theme_bw()+
   ggtitle('Probabilidades marginales estimadas de goles que anota el equipo de casa')+ xlab("Numero de Goles") + ylab("Probabilidad Marginal (%)")+theme(plot.title = element_text(hjust = 0.5))
 
-plot
+print(plot)
 dev.off()
 
-#gr�fico de barras para las probabilidades marginales estimadas del n�mero de goles que anota el equipo visitante.
+#gráfico de barras para las probabilidades marginales estimadas del número de goles que anota el equipo visitante.
 pgol_vis <- as.data.frame(pgol_vis)
 pgol_vis <- rename(pgol_vis, Goles = FTAG, Probabilidad=Freq)
 
@@ -359,10 +359,10 @@ plot <- ggplot(pgol_vis, aes(x = Goles, y = Probabilidad)) +
   geom_col (fill=color_range(7)) + theme_bw()+
   ggtitle('Probabilidades marginales estimadas de goles que anota el equipo visitante')+ xlab("Numero de Goles") + ylab("Probabilidad Marginal (%)")+theme(plot.title = element_text(hjust = 0.5))
 
-plot
+print(plot)
 dev.off()
 
-# HeatMap para las probabilidades conjuntas estimadas de los n�meros de goles que anotan el equipo de casa y el equipo visitante en un partido.
+# HeatMap para las probabilidades conjuntas estimadas de los números de goles que anotan el equipo de casa y el equipo visitante en un partido.
 pc_gol<-as.data.frame(pc_gol)
 pc_gol <- rename(pc_gol, goles_casa = FTHG, goles_visita = FTAG, Probabilidad = Freq)
 
@@ -376,5 +376,5 @@ plot<-ggplot(pc_gol, aes(goles_casa, goles_visita)) +
   ggtitle('Probabilidades conjuntas estimadas')+
   theme(plot.title = element_text(hjust = 0.5))
 
-plot
+print(plot)
 dev.off()
