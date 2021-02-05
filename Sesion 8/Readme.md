@@ -1,11 +1,11 @@
-postwork 8
+Postwork 8
 ================
 Equipo 13
 
-    Jesus Antonio Hernandez Aguilera: antoniohdz_21@hotmail.com
-    Angel Uriel Meléndez Rivera: amelendezr1100@alumno.ipn.mx
-    Adalberto Benitez Zapata: adalb518@gmail.com
-    Sergio Maldonado Rodriguez: sermalrod@outlook.com
+* Jesus Antonio Hernandez Aguilera: antoniohdz_21@hotmail.com
+* Angel Uriel Meléndez Rivera: amelendezr1100@alumno.ipn.mx
+* Adalberto Benitez Zapata: adalb518@gmail.com
+* Sergio Maldonado Rodriguez: sermalrod@outlook.com
 
 
 ## Desarrollo
