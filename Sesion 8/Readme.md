@@ -1,7 +1,12 @@
 postwork 8
 ================
 Equipo 13
-29/1/2021
+
+    Jesus Antonio Hernandez Aguilera: antoniohdz_21@hotmail.com
+    Angel Uriel Meléndez Rivera: amelendezr1100@alumno.ipn.mx
+    Adalberto Benitez Zapata: adalb518@gmail.com
+    Sergio Maldonado Rodriguez: sermalrod@outlook.com
+
 
 ## Desarrollo
 
@@ -15,6 +20,7 @@ esto realiza lo siguiente:
 ``` r
 source("momios.R", echo = FALSE)
 ```
+
 2.  Almacena los gráficos resultantes en formato png, estos se generan
     automaticamente al correr momios.R en la carpeta `www`
 
@@ -35,17 +41,9 @@ source("momios.R", echo = FALSE)
 ``` r
 library(ggplot2)
 library(shiny)
-```
-
-``` r
 library(shinydashboard)
-```
-
-``` r
 library(shinythemes)
-```
 
-``` r
 ui <- 
 
     fluidPage(shinythemes::themeSelector(),
